@@ -32,6 +32,12 @@
             bindings = <&kp TAB>;
             key-positions = <11 12>;
         };
+
+        window_max {
+            bindings = <&kp LG(UP_ARROW)>;
+            key-positions = <11 12>;
+            layers = <2>;
+        };
     };
 
     macros {
