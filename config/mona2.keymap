@@ -32,12 +32,6 @@
             bindings = <&kp TAB>;
             key-positions = <11 12>;
         };
-
-        window_max {
-            bindings = <&kp LG(UP_ARROW)>;
-            key-positions = <11 12>;
-            layers = <2>;
-        };
     };
 
     macros {
@@ -216,10 +210,10 @@
 
         mark_win {
             bindings = <
-&kp LS(N1)  &kp LS(N2)    &kp LS(N3)     &kp LS(N4)         &kp LS(N5)                              &kp LS(N6)     &kp LS(N7)     &kp LS(N8)    &kp LS(N9)  &kp LS(N0)
-&kp TAB     &kp LG(LEFT)  &kp LG(RIGHT)  &kp SINGLE_QUOTE   &kp COLON                &screenshot    &kp MINUS      &kp EQUAL      &kp LBKT      &kp RBKT    &kp BACKSLASH
-&kp LS(Z)   &none         &none          &kp DOUBLE_QUOTES  &kp SEMICOLON  &trans    &cmd           &kp LS(MINUS)  &kp LS(EQUAL)  &kp LS(LBKT)  &kp RBKT    &kp LS(BACKSLASH)
-&kp LCTRL   &kp LEFT_GUI  &kp LEFT_ALT   &trans             &trans         &trans    &kp BACKSPACE  &kp RET                                                 &kp RIGHT_SHIFT
+&kp LS(N1)  &kp LS(N2)    &kp LS(N3)        &kp LS(N4)         &kp LS(N5)                              &kp LS(N6)     &kp LS(N7)     &kp LS(N8)    &kp LS(N9)  &kp LS(N0)
+&kp TAB     &kp LG(LEFT)  &kp LG(RIGHT)     &kp SINGLE_QUOTE   &kp COLON                &screenshot    &kp MINUS      &kp EQUAL      &kp LBKT      &kp RBKT    &kp BACKSLASH
+&kp LS(Z)   &none         &kp LG(UP_ARROW)  &kp DOUBLE_QUOTES  &kp SEMICOLON  &trans    &cmd           &kp LS(MINUS)  &kp LS(EQUAL)  &kp LS(LBKT)  &kp RBKT    &kp LS(BACKSLASH)
+&kp LCTRL   &kp LEFT_GUI  &kp LEFT_ALT      &trans             &trans         &trans    &kp BACKSPACE  &kp RET                                                 &kp RIGHT_SHIFT
             >;
 
             sensor-bindings = <&scroll_up_down>;
