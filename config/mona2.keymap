@@ -260,7 +260,7 @@
 &trans          &trans                  &trans          &trans                   &trans   &trans      &trans        &trans                                &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LA(TAB) LA(LS(TAB))>;
+            sensor-bindings = <&inc_dec_kp TAB LS(TAB)>;
         };
 
         scroll_mac {
