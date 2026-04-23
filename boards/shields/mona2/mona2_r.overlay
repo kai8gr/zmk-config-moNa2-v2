@@ -72,6 +72,7 @@
         layers = <4>;
         input-processors = 
             <&zip_xy_scaler 1 4>;   //ポインタ感度を1/4倍
+            <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;         //Y軸反転
     };
 
     scroller {
