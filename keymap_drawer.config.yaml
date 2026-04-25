@@ -1,0 +1,15 @@
+draw_config:
+  key_w: 60
+  key_h: 56
+  split_gap: 26
+  combo_w: 28
+  combo_h: 26
+parse_config:
+  zmk_keycode_map:
+    LANG1: Kana
+    LANGUAGE_2: Eisu
+    LEFT_GUI: LGUI
+    LEFT_WIN: LGUI
+    RIGHT_SHIFT: RSHIFT
+    LEFT_SHIFT: LSHIFT
+    RETURN: Enter

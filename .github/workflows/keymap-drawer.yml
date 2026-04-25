@@ -1,0 +1,56 @@
+name: Draw keymap
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "config/*.keymap"
+      - "keymap_drawer.config.yaml"
+      - ".github/workflows/keymap-drawer.yml"
+  pull_request:
+    paths:
+      - "config/*.keymap"
+      - "keymap_drawer.config.yaml"
+      - ".github/workflows/keymap-drawer.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install keymap-drawer
+        run: pip install keymap-drawer==0.23.0
+
+      - name: Generate keymap SVG
+        run: |
+          mkdir -p docs
+          keymap -c keymap_drawer.config.yaml parse -z config/*.keymap -c 10 > "$RUNNER_TEMP/keymap.yaml"
+          keymap -c keymap_drawer.config.yaml draw "$RUNNER_TEMP/keymap.yaml" > docs/keymap.svg
+
+      - name: Commit generated SVG
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          if git diff --quiet -- docs/keymap.svg; then
+            echo "docs/keymap.svg is up to date."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/keymap.svg
+          git commit -m "docs: update keymap image"
+          git push
