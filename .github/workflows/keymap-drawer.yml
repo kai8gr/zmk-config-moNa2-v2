@@ -5,11 +5,13 @@ on:
     branches: [main]
     paths:
       - "config/*.keymap"
+      - "config/*.json"
       - "keymap_drawer.config.yaml"
       - ".github/workflows/keymap-drawer.yml"
   pull_request:
     paths:
       - "config/*.keymap"
+      - "config/*.json"
       - "keymap_drawer.config.yaml"
       - ".github/workflows/keymap-drawer.yml"
   workflow_dispatch:
@@ -33,13 +35,13 @@ jobs:
           python-version: "3.12"
 
       - name: Install keymap-drawer
-        run: pip install keymap-drawer==0.23.0
+        run: pip install keymap-drawer==0.21.0 "tree-sitter<0.25" "tree-sitter-devicetree<0.15"
 
       - name: Generate keymap SVG
         run: |
           mkdir -p docs
           keymap -c keymap_drawer.config.yaml parse -z config/*.keymap -c 10 > "$RUNNER_TEMP/keymap.yaml"
-          keymap -c keymap_drawer.config.yaml draw "$RUNNER_TEMP/keymap.yaml" > docs/keymap.svg
+          keymap -c keymap_drawer.config.yaml draw "$RUNNER_TEMP/keymap.yaml" -j config/mona2.json > docs/keymap.svg
 
       - name: Commit generated SVG
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
