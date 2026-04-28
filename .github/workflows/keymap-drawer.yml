@@ -43,6 +43,12 @@ jobs:
           keymap -c keymap_drawer.config.yaml parse -z config/*.keymap -c 10 > "$RUNNER_TEMP/keymap.yaml"
           keymap -c keymap_drawer.config.yaml draw "$RUNNER_TEMP/keymap.yaml" -j config/mona2.json > docs/keymap.svg
 
+      - name: Upload keymap SVG artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: keymap-svg
+          path: docs/keymap.svg
+
       - name: Commit generated SVG
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
