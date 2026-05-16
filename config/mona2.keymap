@@ -19,6 +19,12 @@
     flavor = "balanced";
 };
 
+&msc {
+    delay-ms = <0>;
+    time-to-max-speed-ms = <0>;
+    acceleration-exponent = <0>;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -161,7 +167,7 @@
 
             // 追加: スクロールのタップ時間を設定 (20ms)
 
-            tap-ms = <20>;
+            tap-ms = <30>;
         };
 
         tog_on: toggle_layer_on_only {
