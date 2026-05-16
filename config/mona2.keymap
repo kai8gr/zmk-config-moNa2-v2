@@ -89,21 +89,6 @@
             label = "SCREENSHOT";
         };
 
-        henkan: henkan {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_ALT>,
-                <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&kp GRAVE>,
-                <&macro_release>,
-                <&kp LEFT_ALT>;
-
-            label = "HENKAN";
-        };
-
         cmd: cmd {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -158,15 +143,10 @@
             tapping-term-ms = <200>;
         };
 
-        // 新しいスクロール動作の追加
-
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-
-            // 追加: スクロールのタップ時間を設定 (20ms)
-
             tap-ms = <30>;
         };
 
@@ -182,25 +162,6 @@
             #binding-cells = <1>;
             display-name = "Toggle Layer Off";
             toggle-mode = "off";
-        };
-
-        zfold: zfold {
-            compatible = "zmk,behavior-hold-tap";
-            label = "ZFOLD";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            flavor = "hold-preferred";
-            quick-tap-ms = <150>;
-            hold-while-undecided;
-        };
-
-        zfoldZ: zfoldZ {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ZFOLDZ";
-            #binding-cells = <0>;
-            bindings = <&zfold LEFT_SHIFT Z>, <&kp LS(Z)>;
         };
     };
 
