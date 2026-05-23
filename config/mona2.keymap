@@ -147,7 +147,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-            tap-ms = <5>;
+            tap-ms = <20>;
         };
 
         tog_on: toggle_layer_on_only {
