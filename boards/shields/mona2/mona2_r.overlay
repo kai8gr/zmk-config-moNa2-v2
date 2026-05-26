@@ -97,8 +97,10 @@
 };
 
 /* スローマウスレイヤー */
-&mouse_runtime_input_processor {
+&smouse_runtime_input_processor {
     active-layers = <0x00000030>;  /* layer4 + layer5 */
+    scale-multiplier = <1>;
+    scale-divisor = <4>;            /* スクロール速度。大きいほど遅い。Studioで調整可 */
 };
 
 /* マウス用は全レイヤーで有効 (active-layers = 0 がデフォルト) */
