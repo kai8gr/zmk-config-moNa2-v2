@@ -166,8 +166,8 @@
         rsr_taskchange: rsr_taskchange {
             compatible = "zmk,behavior-runtime-sensor-rotate";
             #sensor-binding-cells = <0>;
-            cw-binding = <&kp TAB>;
-            ccw-binding = <&kp LS(TAB)>;
+            cw-binding = <&kp LS(TAB)>;
+            ccw-binding = <&kp TAB>;
         };
 
         tog_on: toggle_layer_on_only {
