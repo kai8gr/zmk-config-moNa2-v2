@@ -162,6 +162,14 @@
             ccw-binding = <&msc SCRL_UP>;
         };
 
+        // DYA Studio対応 エンコーダータスク切換えアサイン
+        rsr_taskchange: rsr_taskchange {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            cw-binding = <&kp TAB>;
+            ccw-binding = <&kp LS(TAB)>;
+        };
+
         tog_on: toggle_layer_on_only {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
@@ -261,7 +269,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans        &trans                                   &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LS(TAB) TAB>;
+            sensor-bindings = <&rsr_taskchange>;
         };
 
         mac_scroll {
@@ -273,7 +281,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans        &trans                                   &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LS(TAB) TAB>;
+            sensor-bindings = <&rsr_taskchange>;
         };
         win_numcur {
             display-name = "NUMCUR_W";
