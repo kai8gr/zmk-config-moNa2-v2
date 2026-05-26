@@ -61,7 +61,7 @@
         cpi = <600>;
         //swap-xy;
         invert-x;       //COROPIT版ではコメントアウトを外す
-        //invert-y;     //この個体ではY軸は反転不要だったためコメントアウト
+        invert-y;       //COROPIT版ではコメントアウトを外す
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
@@ -89,7 +89,7 @@
     xy-to-scroll-enabled;
     active-layers = <0x000000C0>;  /* layer6 + layer7 */
     scale-multiplier = <1>;
-    scale-divisor = <16>;            /* スクロール速度。大きいほど遅い。Studioで調整可 */
+    scale-divisor = <32>;            /* スクロール速度。大きいほど遅い。Studioで調整可 */
     /* 軸ロック(縦のみ等)が欲しければ AXIS_SNAP_MODE_Y を初期値に */
     /* #include <dt-bindings/zmk/runtime_input_processor.h> 必要 */
     /* axis-snap-mode = <2>; */
