@@ -36,6 +36,14 @@
     };
 };
 
+&mouse_gesture_kp {
+    tapping-term-ms = <200>;
+};
+
+&mouse_gesture_mkp {
+    tapping-term-ms = <200>;
+};
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
