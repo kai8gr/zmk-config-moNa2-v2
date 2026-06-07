@@ -41,7 +41,7 @@
     };
 
     back-tab {
-        pattern = <GESTURE_UP GERSTURE_LEFT>;
+        pattern = <GESTURE_UP GESTURE_LEFT>;
         bindings = <&kp LS(LC(TAB))>;
     };
 
