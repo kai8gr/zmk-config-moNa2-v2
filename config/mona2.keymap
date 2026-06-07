@@ -25,15 +25,31 @@
     // event-code-x = <INPUT_REL_X>; // Optional (default: INPUT_REL_X)
     // event-code-y = <INPUT_REL_Y>; // Optional (default: INPUT_REL_Y)
 
-    task_forward {
-        pattern = <GESTURE_RIGHT>;
-        bindings = <&kp LA(TAB)>;
+    back {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&mkp MB4>;
     };
 
-    task_backward {
-        pattern = <GESTURE_LEFT>;
-        bindings = <&kp LA(LS(TAB))>;
+    forward {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&mkp MB5>;
     };
+
+    next-tab {
+        pattern = <GESTURE_UP GESTURE_RIGHT>;
+        bindings = <&kp LC(TAB)>;
+    };
+
+    back-tab {
+        pattern = <GESTURE_UP GERSTURE_LEFT>;
+        bindings = <&kp LS(LC(TAB))>;
+    };
+
+    tasklist {
+        pattern = <GESTURE_DOWN>;
+        bindings = <&kp LG(TAB)>;
+    };
+    
 };
 
 &mouse_gesture_kp {
