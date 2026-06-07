@@ -30,7 +30,7 @@
         bindings = <&kp LA(TAB)>;
     };
 
-    task_forward {
+    task_backward {
         pattern = <GESTURE_LEFT>;
         bindings = <&kp LA(LS(TAB))>;
     };
