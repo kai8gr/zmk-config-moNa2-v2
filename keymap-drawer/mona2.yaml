@@ -37,7 +37,7 @@ layers:
   - LCTRL
   - LGUI
   - LEFT ALT
-  - Eisu
+  - '&mouse_gesture_kp 0 LANGUAGE_2'
   - {t: SPACE, h: NUMCUR_W}
   - {t: Kana, h: MOUSE_W}
   - BACKSPACE
@@ -80,7 +80,7 @@ layers:
   - LCTRL
   - LGUI
   - LEFT ALT
-  - Eisu
+  - '&mouse_gesture_kp 0 LANGUAGE_2'
   - {t: SPACE, h: NUMCUR_W}
   - {t: Kana, h: MOUSE_W}
   - BACKSPACE
