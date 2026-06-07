@@ -16,6 +16,26 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #include <dt-bindings/zmk/pointing.h>
 
+&zip_mouse_gesture {
+    stroke-size = <300>; // Optional (default: 200)
+    enable-eager-mode; // Optional, but recommended
+    // always-active; // Optional
+    // suppress-movement; // Optional
+
+    // event-code-x = <INPUT_REL_X>; // Optional (default: INPUT_REL_X)
+    // event-code-y = <INPUT_REL_Y>; // Optional (default: INPUT_REL_Y)
+
+    task_forward {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp LA(TAB)>;
+    };
+
+    task_forward {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&kp LA(LS(TAB))>;
+    };
+};
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
