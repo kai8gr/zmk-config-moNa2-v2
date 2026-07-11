@@ -16,7 +16,7 @@ layers:
   - D
   - F
   - G
-  - AT
+  - RCTRL
   - H
   - J
   - K
@@ -27,8 +27,8 @@ layers:
   - C
   - V
   - B
-  - '&lm 6 LALT'
-  - {t: DELETE, h: RCTRL}
+  - {t: AT, h: SCRL_W}
+  - {t: DELETE, h: RSHIFT}
   - N
   - M
   - COMMA
@@ -124,8 +124,8 @@ layers:
   - LGUI
   - LEFT ALT
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: SPACE, h: BLE_W}
+  - {t: ▽, type: trans}
   - BACKSPACE
   - {t: RET, type: held}
   - RSHIFT
@@ -285,7 +285,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Sft+TAB
@@ -517,7 +517,11 @@ layers:
   - '&bootloader'
   - BT CLR ALL
 combos:
-- p: [39, 38]
+- p: [38, 39]
   k: {t: ESC, h: MOUSE_W}
 - p: [11, 12]
   k: TAB
+- p: [17, 18]
+  k: '&mkp MB1'
+- p: [18, 19]
+  k: '&mkp MB2'
