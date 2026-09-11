@@ -4,7 +4,6 @@
 #include <input/processors/runtime-input-processor.dtsi>
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
-#include <mouse-gesture.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -130,5 +129,5 @@
 &trackball_central_listener {
     status = "okay";
     device = <&trackball_central>;
-    input-processors = <&mouse_runtime_input_processor &smouse_runtime_input_processor &zip_mouse_gesture &scroll_runtime_input_processor>;
+    input-processors = <&mouse_runtime_input_processor &smouse_runtime_input_processor &scroll_runtime_input_processor>;
 };
